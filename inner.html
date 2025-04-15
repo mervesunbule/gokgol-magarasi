@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gökgöl Mağarası</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+
+    .controls {
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    audio {
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2c3e50;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gökgöl Mağarası</h1>
+    <p>Zonguldak'ın Doğal Güzelliği</p>
+  </header>
+
+  <div class="content">
+
+    <!-- FOTOĞRAF GALERİSİ -->
+    <div class="gallery">
+      <img src="gokgol1.jpg" alt="Gökgöl Mağarası Fotoğrafı 1">
+      <img src="gokgol2.jpg" alt="Gökgöl Mağarası Fotoğrafı 2">
+      <img src="gokgol3.jpg" alt="Gökgöl Mağarası Fotoğrafı 3">
+      <img src="gokgol4.jpg" alt="Gökgöl Mağarası Fotoğrafı 4">
+    </div>
+
+    <!-- METİN -->
+    <p id="magaraMetni">
+       Gökgöl Mağarası hakkında bilgiler:
+Konum:Zonguldak'ın Üzülmez bölgesinde bulunur. Zonguldak-Ankara karayolu üzerinde, şehir merkezine yaklaşık 3 km mesafededir.
+
+Genel Özellikler:
+Aktif bir damlataş mağarasıdır.
+Kollarıyla birlikte toplam uzunluğu 3350 metredir. Bu özelliğiyle Türkiye'nin en uzun 10. mağarasıdır.
+875 metrelik yürüyüş yolu ile Türkiye'nin gezi alanı en büyük mağarasıdır.
+Karbonifer dönemine aittir ve yaklaşık 350 milyon yaşındadır.
+İçerisinde yağışlı dönemlerde debisi artan bir yeraltı deresi bulunur. Bu dere doğal bir sifon ile Erçek Deresi'ne dökülür.
+Mağara içerisinde her türden damlataş oluşumları (sarkıt, dikit, sütun, bayrak damlataşı ve makarna sarkıtlar) görülebilir.
+Girişten büyük çöküntü salonuna kadar olan bölümleri farklı adlarla nitelendirilmiştir: Fosil giriş, Astım Salonu, Harikalar Salonu ve Mucizeler Salonu.
+Yıl içinde sıcaklık ve nem oranının fazla değişmemesi nedeniyle mikroklima özelliğine sahiptir. Bu durum özellikle solunum yolu (astım) hastalarının tedavisinde faydalı olmaktadır.
+
+Oluşumu:
+Karstik bir oluşumdur.Kireçtaşlarının karbondioksitli sular tarafından eritilmesiyle meydana gelmiştir.
+Doğu-batı yönlü bir fayın da oluşumunda etkili olduğu düşünülmektedir. Mağara bazen fay doğrultusunda, bazen de tabaka uzanışına uygun olarak gelişmiştir.
+
+Turizm:
+2001 yılında turizme açılmıştır.
+Aydınlatma sistemi, engelli dostu yürüyüş yolları, cam köprüleri ve seyir terasları bulunmaktadır.
+Ziyaretçi merkezi, hediyelik eşya satış yeri, tuvalet ve otopark imkanları mevcuttur.
+Zonguldak'ın önemli turistik mekanlarından biridir.
+
+Bilimsel Önemi:
+Mağara içerisinde milyonlarca yıllık mercan fosilleri bulunmaktadır.
+Yakın zamanda keşfedilen yeni bir kabuklu türü ("Gammarus tumaf") bilimsel çalışmalara konu olmaktadır.   </p>
+
+    <!-- SESLİ OKUMA -->
+    <div class="controls">
+      <button onclick="metniOku()">🗣️ Metni Sesli Oku</button>
+    </div>
+
+    <!-- SESLİ ANLATIM DOSYASI -->
+    <h3>🎧 Sesli Anlatım Dosyası:</h3>
+    <audio controls>
+      <source src="gokgol-anlatim.mp3" type="audio/mpeg" />
+      Tarayıcınız ses oynatmayı desteklemiyor.
+    </audio>
+  </div>
+
+  <footer>
+    &copy; 2025 Gökgöl Mağarası Tanıtımı | Zonguldak
+  </footer>
+
+  <script>
+    function metniOku() {
+      const metin = document.getElementById("magaraMetni").innerText;
+      const ses = new SpeechSynthesisUtterance(metin);
+      ses.lang = "tr-TR";
+      window.speechSynthesis.speak(ses);
+    }
+  </script>
+</body>
+</html>
