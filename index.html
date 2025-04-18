@@ -53,9 +53,10 @@
       margin: 20px 0;
     }
 
-    button {
-      padding: 10px 20px;
+    button, select {
+      padding: 10px 15px;
       font-size: 1em;
+      margin-right: 10px;
       background-color: #2c3e50;
       color: white;
       border: none;
@@ -120,10 +121,23 @@ Zonguldak'ın önemli turistik mekanlarından biridir.
 
 Bilimsel Önemi:
 Mağara içerisinde milyonlarca yıllık mercan fosilleri bulunmaktadır.
-Yakın zamanda keşfedilen yeni bir kabuklu türü ("Gammarus tumaf") bilimsel çalışmalara konu olmaktadır.   </p>
+Yakın zamanda keşfedilen yeni bir kabuklu türü ("Gammarus tumaf") bilimsel çalışmalara konu olmaktadır.   
+    </p>
 
     <!-- SESLİ OKUMA -->
     <div class="controls">
+      <label for="language">Sesli Okuma Dili:</label>
+      <select id="language">
+        <option value="tr-TR">🇹🇷 Türkçe</option>
+        <option value="en-US">🇺🇸 İngilizce</option>
+        <option value="de-DE">🇩🇪 Almanca</option>
+        <option value="fr-FR">🇫🇷 Fransızca</option>
+        <option value="es-ES">🇪🇸 İspanyolca</option>
+        <option value="ar-SA">🇸🇦 Arapça</option>
+        <option value="ru-RU">🇷🇺 Rusça</option>
+        <option value="ja-JP">🇯🇵 Japonca</option>
+        <option value="zh-CN">🇨🇳 Çince</option>
+      </select>
       <button onclick="metniOku()">🗣️ Metni Sesli Oku</button>
     </div>
 
@@ -142,10 +156,13 @@ Yakın zamanda keşfedilen yeni bir kabuklu türü ("Gammarus tumaf") bilimsel �
   <script>
     function metniOku() {
       const metin = document.getElementById("magaraMetni").innerText;
+      const dil = document.getElementById("language").value;
       const ses = new SpeechSynthesisUtterance(metin);
-      ses.lang = "tr-TR";
+      ses.lang = dil;
+      window.speechSynthesis.cancel();
       window.speechSynthesis.speak(ses);
     }
   </script>
 </body>
 </html>
+
