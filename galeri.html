@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gökgöl Mağarası - Galeri</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #fffacd; /* Açık limon sarısı arka plan */
+            color: #333; /* Koyu gri metin rengi */
+            display: flex;
+            flex-direction: column; /* Öğeleri dikey olarak sırala */
+            align-items: center; /* Yatayda ortala */
+            text-align: center; /* Metinleri genel olarak ortala */
+            min-height: 100vh; /* Sayfanın en az ekran yüksekliğinde olmasını sağlar */
+            /* justify-content: center; İçeriği dikey olarak ortala - Kaldırıldı */
+        }
+
+        header {
+            background-color: #ffd700; /* Altın sarısı başlık arka planı */
+            color: #4b0082; /* Mor başlık metin rengi */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 80%; /* Başlığı genişlet */
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #f0e68c; /* Haki menü arka planı */
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 80%; /* Menüyü genişlet */
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #800080; /* Mor bağlantı rengi */
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav a:hover {
+            background-color: #ffff00; /* Sarı hover rengi */
+            color: #4b0082;
+        }
+
+        nav a .nav-emoji {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%; /* İçerik alanını genişlet */
+            text-align: center; /* İçeriği ortala */
+            display: flex; /* İçeriği flex yap */
+            flex-direction: column; /* Öğeleri dikey sırala */
+            align-items: center; /* Yatayda ortala */
+        }
+
+        .content-title {
+            font-size: 2em;
+            color: #ffd700; /* Altın sarısı başlık rengi */
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Eşit genişlikte 3 sütun */
+            gap: 15px;
+            width: 70%; /* Ortalı ve belirli bir genişlikte */
+            max-width: 700px; /* Maksimum genişlik */
+            margin-bottom: 20px;
+            justify-content: center; /* Öğeleri yatayda ortala */
+            align-items: center; /* Öğeleri dikeyde ortala */
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px; /* Sabit yükseklik */
+            object-fit: cover; /* Fotoğrafları alanı kaplayacak şekilde sığdır ve kırp */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out; /* Büyüme animasyonu için */
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05); /* Üzerine gelince hafifçe büyüme (isteğe bağlı) */
+        }
+
+        /* Modal (büyük fotoğraf görünümü) için stil */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            display: block;
+            max-width: 95%;
+            max-height: 95%;
+            margin: auto;
+            object-fit: contain; /* Tam fotoğrafı göster */
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #f1f1f1;
+            font-size: 60px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 3;
+            user-select: none;
+        }
+
+        .modal-arrow:hover,
+        .modal-arrow:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .modal-prev {
+            left: 30px;
+        }
+
+        .modal-next {
+            right: 30px;
+        }
+
+        /* Küçük ekranlar için düzenleme */
+        @media (max-width: 600px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .gallery-image {
+                height: 150px; /* Küçük ekranlarda daha küçük sabit yükseklik */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Zonguldak Gökgöl Mağarası</h1>
+      <p class="hero-subtitle">Doğanın Büyüleyici Güzelliği</p>
+      <nav class="main-navigation">
+        <a href="hakkinda.html">
+          <img src="hakkinda.jpg" alt="Hakkında" class="nav-icon">
+          <span class="nav-text">Hakkında</span>
+        </a>
+        <a href="konum.html">
+          <img src="harita.jpg" alt="Konum" class="nav-icon">
+          <span class="nav-text">Konum</span>
+        </a>
+        <a href="aktiviteler.html">
+          <img src="aktiviteler.jpg" alt="Aktiviteler" class="nav-icon">
+          <span class="nav-text">Aktiviteler</span>
+        </a>
+        <a href="galeri.html">
+          <img src="galeri.jpg" alt="Galeri" class="nav-icon">
+          <span class="nav-text">Galeri</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+
+    <div class="content-section">
+        <h2 class="content-title">Galeri</h2>
+        <div class="gallery-container">
+            <img id="img0" class="gallery-image" src="gokgol1.jpg" alt="Gökgöl Mağarası Fotoğraf 1" onclick="openModal(0)">
+            <img id="img1" class="gallery-image" src="gokgol2.jpg" alt="Gökgöl Mağarası Fotoğraf 2" onclick="openModal(1)">
+            <img id="img2" class="gallery-image" src="gokgol3.jpg" alt="Gökgöl Mağarası Fotoğraf 3" onclick="openModal(2)">
+            <img id="img3" class="gallery-image" src="gokgol4.jpg" alt="Gökgöl Mağarası Fotoğraf 4" onclick="openModal(3)">
+            <img id="img4" class="gallery-image" src="gokgol5.jpg" alt="Gökgöl Mağarası Fotoğraf 5" onclick="openModal(4)">
+            <img id="img5" class="gallery-image" src="gokgol6.jpg" alt="Gökgöl Mağarası Fotoğraf 6" onclick="openModal(5)">
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="expandedImg">
+        <a class="modal-arrow modal-prev" onclick="changeModalImage(-1); event.stopPropagation();">&#10094;</a>
+        <a class="modal-arrow modal-next" onclick="changeModalImage(1); event.stopPropagation();">&#10095;</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Zonguldak Gökgöl Mağarası - Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.gallery-image');
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("expandedImg");
+        let currentIndex = 0;
+        let isMouseDown = false;
+        let startX = 0;
+
+        function openModal(index) {
+            currentIndex = index;
+            modal.style.display = "flex";
+            modalImg.src = images[currentIndex].src;
+            modalImg.alt = images[currentIndex].alt;
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        function nextImage() {
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            modalImg.src = images[currentIndex].src;
+            modalImg.alt = images[currentIndex].alt;
+        }
+
+        function prevImage() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+            modalImg.src = images[currentIndex].src;
+            modalImg.alt = images[currentIndex].alt;
+        }
+
+        function changeModalImage(n) {
+            currentIndex += n;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            modalImg.src = images[currentIndex].src;
+            modalImg.alt = images[currentIndex].alt;
+        }
+
+        modal.addEventListener('click', closeModal); // Modal dışına tıklayınca kapanma
+
+        modalImg.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            startX = e.clientX;
+        });
+
+        modalImg.addEventListener('mouseup', () => {
+            isMouseDown = false;
+        });
+
+        modalImg.addEventListener('mousemove', (e) => {
+            if (!isMouseDown) return;
+            const diffX = e.clientX - startX;
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    prevImage();
+                } else {
+                    nextImage();
+                }
+                isMouseDown = false;
+            }
+        });
+
+        // Klavyeden sağ ve sol tuşlarla geçiş (modal açıkken)
+        document.addEventListener('keydown', function(event) {
+            if (modal.style.display === 'flex') {
+                if (event.key === 'ArrowLeft') {
+                    prevImage();
+                } else if (event.key === 'ArrowRight') {
+                    nextImage();
+                } else if (event.key === 'Escape') {
+                    closeModal();
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
