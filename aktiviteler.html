@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gökgöl Mağarası - Aktiviteler</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #ffe4c4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+      justify-content: center;
+    }
+
+    header {
+      background-color: #ff8c00;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 80%;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background-color: #ffa500;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #8b4513;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav a:hover {
+      background-color: #ffdab9;
+    }
+
+    .nav-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 5px;
+      object-fit: cover;
+      border-radius: 8px;
+      background-color: white;
+      padding: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .content-section {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      text-align: left;
+    }
+
+    .content-title {
+      font-size: 2em;
+      color: #ff8c00;
+      border-bottom: 3px solid #ff8c00;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .activities-list {
+      list-style: none;
+      padding-left: 0;
+      text-align: left;
+    }
+
+    .activities-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .activity-emoji {
+      font-size: 1.5em;
+      margin-right: 15px;
+    }
+
+    .activity-text {
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ff8c00;
+      color: white;
+      border-radius: 10px;
+      margin-top: 30px;
+      width: 80%;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Gökgöl Mağarası</h1>
+  <nav>
+    <a href="index.html">
+      <img src="hakkinda.jpg" alt="Ana Sayfa" class="nav-icon">
+      Ana Sayfa
+    </a>
+    <a href="hakkinda.html">
+      <img src="hakkinda.jpg" alt="Hakkında" class="nav-icon">
+      Hakkında Bilgi
+    </a>
+    <a href="konum.html">
+      <img src="harita.jpg" alt="Konum" class="nav-icon">
+      Harita ve Konum
+    </a>
+    <a href="galeri.html">
+      <img src="galeri.jpg" alt="Galeri" class="nav-icon">
+      Galeri
+    </a>
+  </nav>
+</header>
+
+<div class="content-section">
+  <h2 class="content-title">Aktiviteler</h2>
+  <ul class="activities-list">
+    <li><span class="activity-emoji">🚶‍♀️</span><span class="activity-text"><strong>Mağara Turu:</strong> Rehber eşliğinde mağaranın büyüleyici atmosferini keşfedin ve doğal oluşumları yakından inceleyin.</span></li>
+    <li><span class="activity-emoji">🏞️</span><span class="activity-text"><strong>Doğa Yürüyüşleri:</strong> Mağara çevresindeki doğal güzellikleri keşfetmek için işaretlenmiş yürüyüş parkurlarında keyifli yürüyüşler yapın.</span></li>
+    <li><span class="activity-emoji">📸</span><span class="activity-text"><strong>Fotoğrafçılık:</strong> Mağaranın eşsiz manzaralarını ve doğal detaylarını fotoğraflayarak anılarınızı ölümsüzleştirin.</span></li>
+    <li><span class="activity-emoji">🧺</span><span class="activity-text"><strong>Piknik:</strong> Mağara çevresindeki uygun alanlarda doğayla iç içe piknik yapabilirsiniz.</span></li>
+  </ul>
+</div>
+
+<footer>
+  <p>© 2025 Zonguldak Gökgöl Mağarası - Tüm Hakları Saklıdır.</p>
+</footer>
+
+</body>
+</html>
