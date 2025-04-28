@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gökgöl Mağarası - Hakkında Bilgi</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Genel Stiller */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e6ffe6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+        header, nav, footer {
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        header {
+            background-color: #2e8b57;
+            color: white;
+            padding: 20px;
+        }
+        nav {
+            background-color: #66cdaa;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav a {
+            color: #006400;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav a:hover {
+            background-color: #b2f0b2;
+        }
+        .nav-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .nav-text {
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .content-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .content-title {
+            font-size: 2em;
+            color: #2e8b57;
+            border-bottom: 3px solid #2e8b57;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .content-text {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #2e8b57;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Dil Seçici ve Ses Çalar Alanı */
+        .controls-container {
+            background-color: #c1e1c1;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            justify-content: flex-start;
+        }
+        .language-selector label {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #006400;
+        }
+        #language {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            flex-grow: 1;
+        }
+
+        .audio-player {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .player-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .player-button {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #006400;
+        }
+
+        .progress-bar-container {
+            flex-grow: 1;
+            background-color: #e6ffe6;
+            border-radius: 5px;
+            height: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background-color: #2e8b57;
+            height: 100%;
+            width: 0%;
+        }
+
+        #speedControl {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gökgöl Mağarası</h1>
+    <nav>
+        <a href="index.html">
+          <img src="hakkinda.jpg" alt="Hakkında" class="nav-icon">
+          <span class="nav-text">Hakkında</span>
+        </a>
+        <a href="konum.html">
+          <img src="harita.jpg" alt="Konum" class="nav-icon">
+          <span class="nav-text">Konum</span>
+        </a>
+        <a href="aktiviteler.html">
+          <img src="aktiviteler.jpg" alt="Aktiviteler" class="nav-icon">
+          <span class="nav-text">Aktiviteler</span>
+        </a>
+        <a href="galeri.html">
+          <img src="galeri.jpg" alt="Galeri" class="nav-icon">
+          <span class="nav-text">Galeri</span>
+        </a>
+    </nav>
+</header>
+
+<!-- Dil Seçici ve Ses Çalar Alanı -->
+<div class="controls-container">
+    <div class="language-selector">
+        <label for="language">Dil Seçin:</label>
+        <select id="language">
+            <option value="tr">Türkçe</option>
+            <option value="en">İngilizce</option>
+            <option value="arab">Arapça</option>
+            <option value="alm">Almanca</option>
+        </select>
+    </div>
+
+    <div class="audio-player">
+        <div class="player-controls">
+            <button class="player-button" id="prevButton">⏮️</button>
+            <button class="player-button" id="playButton">▶️</button>
+            <button class="player-button" id="pauseButton" style="display: none;">⏸️</button>
+            <button class="player-button" id="nextButton">⏭️</button>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <select id="speedControl">
+            <option value="0.25">0.25x</option>
+            <option value="0.5">0.5x</option>
+            <option value="1" selected>Normal</option>
+            <option value="1.5">1.5x</option>
+            <option value="2">2x</option>
+        </select>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2 class="content-title" id="title">Hakkında Bilgi</h2>
+    <p class="content-text" id="content">Türkiye’nin en uzun 10. İlimizin ise 2. mağarası olan Gökgöl Mağarası...</p>
+</div>
+
+<footer>
+    <p>© 2025 Zonguldak Gökgöl Mağarası - Tüm Hakları Saklıdır.</p>
+</footer>
+
+<script>
+    const languageSelector = document.getElementById('language');
+    const titleElement = document.getElementById('title');
+    const contentElement = document.getElementById('content');
+    const playButton = document.getElementById('playButton');
+    const pauseButton = document.getElementById('pauseButton');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    const progressBar = document.getElementById('progressBar');
+    const progressBarContainer = document.querySelector('.progress-bar-container');
+    const speedControl = document.getElementById('speedControl');
+    const audio = new Audio();
+    let currentLanguage = 'tr';
+
+    const translations = {
+        tr: { title: "Hakkında Bilgi", content: "Türkiye’nin en uzun 10. İlimizin ise 2. mağarası olan Gökgöl Mağarası..." },
+        en: { title: "About Gökgöl Cave", content: "Gökgöl Cave, located in Zonguldak, is the second largest cave..." },
+        arab: { title: "معلومات عن مغارة كوغكول", content: "مغارة كوغكول، الواقعة في زونغولداك، هي ثاني أكبر مغارة..." },
+        alm: { title: "Information über die Gökgöl-Höhle", content: "Die Gökgöl-Höhle, die sich in Zonguldak befindet, ist die zweitgrößte Höhle..." }
+    };
+
+    const audioFiles = {
+        tr: "hakkindatr.mp3",
+        en: "hakkindaeng.mp3",
+        arab: "hakkindaarab.mp3",
+        alm: "hakkindaalm.mp3"
+    };
+
+    function loadContent(language) {
+        titleElement.textContent = translations[language].title;
+        contentElement.textContent = translations[language].content;
+        audio.src = audioFiles[language];
+        currentLanguage = language;
+    }
+
+    languageSelector.addEventListener('change', function() {
+        const language = languageSelector.value;
+        loadContent(language);
+    });
+
+    playButton.addEventListener('click', function() {
+        audio.play();
+        playButton.style.display = 'none';
+        pauseButton.style.display = 'inline-block';
+    });
+
+    pauseButton.addEventListener('click', function() {
+        audio.pause();
+        pauseButton.style.display = 'none';
+        playButton.style.display = 'inline-block';
+    });
+
+    prevButton.addEventListener('click', function() {
+        audio.currentTime -= 5;
+    });
+
+    nextButton.addEventListener('click', function() {
+        audio.currentTime += 5;
+    });
+
+    audio.addEventListener('timeupdate', function() {
+        if (audio.duration) {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = progress + '%';
+        }
+    });
+
+    progressBarContainer.addEventListener('click', function(e) {
+        const containerWidth = this.offsetWidth;
+        const clickPositionX = e.offsetX;
+        const seekTime = (clickPositionX / containerWidth) * audio.duration;
+        audio.currentTime = seekTime;
+    });
+
+    speedControl.addEventListener('change', function() {
+        audio.playbackRate = parseFloat(speedControl.value);
+    });
+
+    loadContent(currentLanguage);
+</script>
+
+</body>
+</html>
