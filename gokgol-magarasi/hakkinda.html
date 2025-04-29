@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <script src="https://unpkg.com/i18next@21.6.14/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gökgöl Mağarası - Hakkında Bilgi</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Genel Stiller */
+        /* Genel Stiller (aynı kalabilir) */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -89,7 +92,7 @@
             text-align: center;
         }
 
-        /* Dil Seçici ve Ses Çalar Alanı */
+        /* Dil Seçici ve Ses Çalar Alanı (aynı kalabilir) */
         .controls-container {
             background-color: #c1e1c1;
             border-radius: 10px;
@@ -174,33 +177,32 @@
     <h1>Gökgöl Mağarası</h1>
     <nav>
         <a href="index.html">
-          <img src="hakkinda.jpg" alt="Hakkında" class="nav-icon">
-          <span class="nav-text">Hakkında</span>
+            <img src="hakkinda.jpg" alt="Hakkında" class="nav-icon">
+            <span class="nav-text">Hakkında</span>
         </a>
         <a href="konum.html">
-          <img src="harita.jpg" alt="Konum" class="nav-icon">
-          <span class="nav-text">Konum</span>
+            <img src="harita.jpg" alt="Konum" class="nav-icon">
+            <span class="nav-text">Konum</span>
         </a>
         <a href="aktiviteler.html">
-          <img src="aktiviteler.jpg" alt="Aktiviteler" class="nav-icon">
-          <span class="nav-text">Aktiviteler</span>
+            <img src="aktiviteler.jpg" alt="Aktiviteler" class="nav-icon">
+            <span class="nav-text">Aktiviteler</span>
         </a>
         <a href="galeri.html">
-          <img src="galeri.jpg" alt="Galeri" class="nav-icon">
-          <span class="nav-text">Galeri</span>
+            <img src="galeri.jpg" alt="Galeri" class="nav-icon">
+            <span class="nav-text">Galeri</span>
         </a>
     </nav>
 </header>
 
-<!-- Dil Seçici ve Ses Çalar Alanı -->
 <div class="controls-container">
     <div class="language-selector">
         <label for="language">Dil Seçin:</label>
         <select id="language">
             <option value="tr">Türkçe</option>
             <option value="en">İngilizce</option>
-            <option value="arab">Arapça</option>
-            <option value="alm">Almanca</option>
+            <option value="ar">Arapça</option>
+            <option value="de">Almanca</option>
         </select>
     </div>
 
@@ -226,7 +228,10 @@
 
 <div class="content-section">
     <h2 class="content-title" id="title">Hakkında Bilgi</h2>
-    <p class="content-text" id="content">Türkiye’nin en uzun 10. İlimizin ise 2. mağarası olan Gökgöl Mağarası...</p>
+    <p class="content-text" id="content">Türkiye’nin en uzun 10. İlimizin ise 2. mağarası olan Gökgöl Mağarası Zonguldak’ın en uzun 2. mağarasıdır. Toplam uzunluğu 3350 metre olan mağara Zonguldak – Ankara karayolu üzerinde yer alır ve şehir merkezine 3 km mesafededir. Mağara girişi karayolunun hemen yanında yer aldığından ulaşım oldukça kolaydır. Gökgöl Mağarası içerisindeki ilk araştırmalar 1976 yılında jeolog Temuçin AYGEN ile İngiliz mağara araştırmacıları Chris BAUER ve Harvey LOMAS tarafından yapılmıştır. İlerleyen süreçte mağaranın haritası hazırlanmış ve yapılan çalışmalar neticesinde 2001 yılında turizme açılmıştır. Turizme açıldığı günden bugüne yaklaşık 300.000 ziyaretçi ağırlayan Gökgöl mağarası, yıl içinde sıcaklık ve nem oranının fazla değişmemesi nedeni ile mikroklima özelliğine sahiptir. Bu nedenle özellikle solunum yolu (astım) hastalarının tedavisinde de mağaradan yararlanılmaktadır.
+Aktif bir mağara olan Gökgöl birbirine bağlı katlardan oluşmuş, yatay gelişmiş bir mağaradır. Ana galerinin yanında iki büyük yan koldan oluşur ve büyük çöküntü salonu yan kolların buluştuğu yerdir. Gökgöl Mağarasının içi damla taş birikimi yönünden son derece zengindir. Mağaranın girişten büyük çöküntü salonuna kadar olan bölümleri Fosil giriş, Astım Salonu, Harikalar Salonu ve Mucizeler Salonu gibi adlarla nitelendirilmiştir.
+Salon isimlerinden de anlaşılacağı üzere mağara içerisinde her türden oluşum mevcuttur. Sarkıtlar, dikitler, sarkıt ve dikitlerin birleşmesinden meydana gelen sütunların yanı sıra bayrak damla taşları ve dere üzerinde yer alan yoğun makarna sarkıtları görülmeye değerdir.
+875 metrelik yürüyüş yoluna sahip olan mağara içerisinde yağışlı dönemlerde debisi artan bir yer altı deresi akmaktadır. Yer altı deresi girişe yakın bir yerde doğal sifon ile Erçek deresine dökülür.Mağara havası yaz mevsiminde dışarıya göre daha serin, kış mevsiminde ise biraz daha sıcak olmaktadır. Mikroklima özelliğinden dolayı mağara sağlık turizmi bakımından da büyük öneme sahiptir. Her metresinde ayrı bir oluşum bulunan mağara 2016 yılında tamamlanan restorasyonu ile ısı yayarak oluşumlara zarar veren genel aydınlatmalardan kurtarılmış, bunlar yerine ısı yaymayan led aydınlatmalar ile obje aydınlatması yapılarak oluşumların görsel güzellikleri ortaya çıkarılmıştır. Mağaramız oluşum aydınlatmaları, yürüyüş parkuru, cam köprüleri ve seyir teraslarıyla görülmeye değer güzelliktedir.</p>
 </div>
 
 <footer>
@@ -234,84 +239,151 @@
 </footer>
 
 <script>
-    const languageSelector = document.getElementById('language');
     const titleElement = document.getElementById('title');
     const contentElement = document.getElementById('content');
+    const languageSelector = document.getElementById('language');
     const playButton = document.getElementById('playButton');
     const pauseButton = document.getElementById('pauseButton');
-    const prevButton = document.getElementById('prevButton');
-    const nextButton = document.getElementById('nextButton');
     const progressBar = document.getElementById('progressBar');
-    const progressBarContainer = document.querySelector('.progress-bar-container');
     const speedControl = document.getElementById('speedControl');
-    const audio = new Audio();
-    let currentLanguage = 'tr';
-
-    const translations = {
-        tr: { title: "Hakkında Bilgi", content: "Türkiye’nin en uzun 10. İlimizin ise 2. mağarası olan Gökgöl Mağarası..." },
-        en: { title: "About Gökgöl Cave", content: "Gökgöl Cave, located in Zonguldak, is the second largest cave..." },
-        arab: { title: "معلومات عن مغارة كوغكول", content: "مغارة كوغكول، الواقعة في زونغولداك، هي ثاني أكبر مغارة..." },
-        alm: { title: "Information über die Gökgöl-Höhle", content: "Die Gökgöl-Höhle, die sich in Zonguldak befindet, ist die zweitgrößte Höhle..." }
-    };
+    let audio = new Audio(); // Başlangıçta boş bir Audio nesnesi oluşturuyoruz
+    let isPlaying = false;
+    let audioInterval;
 
     const audioFiles = {
         tr: "hakkindatr.mp3",
         en: "hakkindaeng.mp3",
-        arab: "hakkindaarab.mp3",
-        alm: "hakkindaalm.mp3"
+        de: "hakkindaalm.mp3",
+        ar: "hakkindaarab.mp3"
     };
 
-    function loadContent(language) {
-        titleElement.textContent = translations[language].title;
-        contentElement.textContent = translations[language].content;
-        audio.src = audioFiles[language];
-        currentLanguage = language;
+    i18next
+        .use(i18nextBrowserLanguageDetector)
+        .init({
+            fallbackLng: 'tr',
+            debug: true,
+            resources: {
+                tr: {
+                    translation: {
+                        title: "Hakkında Bilgi",
+                        content: `Türkiye’nin en uzun 10. İlimizin ise 2. mağarası olan Gökgöl Mağarası Zonguldak’ın en uzun 2. mağarasıdır. Toplam uzunluğu 3350 metre olan mağara Zonguldak – Ankara karayolu üzerinde yer alır ve şehir merkezine 3 km mesafededir. Mağara girişi karayolunun hemen yanında yer aldığından ulaşım oldukça kolaydır. Gökgöl Mağarası içerisindeki ilk araştırmalar 1976 yılında jeolog Temuçin AYGEN ile İngiliz mağara araştırmacıları Chris BAUER ve Harvey LOMAS tarafından yapılmıştır. İlerleyen süreçte mağaranın haritası hazırlanmış ve yapılan çalışmalar neticesinde 2001 yılında turizme açılmıştır. Turizme açıldığı günden bugüne yaklaşık 300.000 ziyaretçi ağırlayan Gökgöl mağarası, yıl içinde sıcaklık ve nem oranının fazla değişmemesi nedeni ile mikroklima özelliğine sahiptir. Bu nedenle özellikle solunum yolu (astım) hastalarının tedavisinde de mağaradan yararlanılmaktadır.
+Aktif bir mağara olan Gökgöl birbirine bağlı katlardan oluşmuş, yatay gelişmiş bir mağaradır. Ana galerinin yanında iki büyük yan koldan oluşur ve büyük çöküntü salonu yan kolların buluştuğu yerdir. Gökgöl Mağarasının içi damla taş birikimi yönünden son derece zengindir. Mağaranın girişten büyük çöküntü salonuna kadar olan bölümleri Fosil giriş, Astım Salonu, Harikalar Salonu ve Mucizeler Salonu gibi adlarla nitelendirilmiştir.
+Salon isimlerinden de anlaşılacağı üzere mağara içerisinde her türden oluşum mevcuttur. Sarkıtlar, dikitler, sarkıt ve dikitlerin birleşmesinden meydana gelen sütunların yanı sıra bayrak damla taşları ve dere üzerinde yer alan yoğun makarna sarkıtları görülmeye değerdir.
+875 metrelik yürüyüş yoluna sahip olan mağara içerisinde yağışlı dönemlerde debisi artan bir yer altı deresi akmaktadır. Yer altı deresi girişe yakın bir yerde doğal sifon ile Erçek deresine dökülür.Mağara havası yaz mevsiminde dışarıya göre daha serin, kış mevsiminde ise biraz daha sıcak olmaktadır. Mikroklima özelliğinden dolayı mağara sağlık turizmi bakımından da büyük öneme sahiptir. Her metresinde ayrı bir oluşum bulunan mağara 2016 yılında tamamlanan restorasyonu ile ısı yayarak oluşumlara zarar veren genel aydınlatmalardan kurtarılmış, bunlar yerine ısı yaymayan led aydınlatmalar ile obje aydınlatması yapılarak oluşumların görsel güzellikleri ortaya çıkarılmıştır. Mağaramız oluşum aydınlatmaları, yürüyüş parkuru, cam köprüleri ve seyir teraslarıyla görülmeye değer güzelliktedir.`
+                    }
+                },
+                en: {
+                    translation: {
+                        title: "About the Cave",
+                        content: `
+Gökgöl Cave, which is the 10th longest cave in Turkey and the 2nd longest cave in our province, is the 2nd longest cave in Zonguldak. The cave, which has a total length of 3350 meters, is located on the Zonguldak - Ankara highway and is 3 km from the city center. Since the cave entrance is located right next to the highway, transportation is very easy. The first researches in Gökgöl Cave were conducted in 1976 by geologist Temuçin AYGEN and British cave researchers Chris BAUER and Harvey LOMAS. In the following process, a map of the cave was prepared and as a result of the studies, it was opened to tourism in 2001. Gökgöl cave, which has hosted approximately 300.000 visitors since the day it was opened to tourism, has a microclimate feature due to the fact that the temperature and humidity do not change much during the year. For this reason, the cave is especially utilized in the treatment of respiratory tract (asthma) patients.
+Gökgöl, an active cave, is a horizontally developed cave consisting of interconnected floors. It consists of two large side branches next to the main gallery and the large depression hall is where the side branches meet. The interior of Gokgol Cave is extremely rich in drip stone deposits. The sections of the cave from the entrance to the great collapse hall are characterized by names such as Fossil entrance, Asthma Hall, Hall of Wonders and Hall of Miracles.
+As can be understood from the names of the halls, there are all kinds of formations in the cave. Stalactites, stalagmites, columns formed by the combination of stalactites and stalagmites, as well as flag drop stones and dense pasta stalactites on the stream are worth seeing.
+The cave has an 875-meter walking path and an underground stream flows through the cave, the flow rate of which increases during the rainy season. The underground stream flows into the Erçek stream with a natural siphon near the entrance. The cave air is cooler in summer and a little warmer in winter. Due to its microclimate feature, the cave is also of great importance in terms of health tourism. With the restoration completed in 2016, the cave, which has a separate formation in every meter, was freed from the general lighting that damages the formations by emitting heat, and instead of these, object lighting was done with LED lighting that does not emit heat and the visual beauty of the formations was revealed. Our cave is worth seeing with its formation illuminations, hiking trail, glass bridges and viewing terraces.`
+                    }
+                },
+                de: {
+                    translation: {
+                        title: "Über die Höhle",
+                        content: `Die Geschichte des Leuchtturms von Zonguldak ist eng mit der Entwicklung der Stadt Zonguldak und insbesondere des Viertels Fener verbunden. Hier ist ein detaillierter Bericht: Gründung und frühe Jahre: Mit dem Anstieg der Kohleförderung in Zonguldak wurde zwischen 1893 und 1896 für die in der Region lebenden Führungskräfte und Angestellten des französischen Unternehmens eine Siedlung mit der Bezeichnung „Französisches Viertel“ errichtet. Dieses Gebiet bildete die Grundlage des heutigen Fener-Viertels. Der Zonguldak-Leuchtturm selbst wurde 1908 am Ende dieser Siedlung an einem Punkt mit Blick auf das Meer errichtet. Mit dem Bau des Leuchtturms wurde das „Französische Viertel“ unter den Einwohnern als „Fener-Viertel“ bekannt. In den offiziellen Aufzeichnungen wird das Gebiet jedoch in Anlehnung an seine geografische Struktur als „Yayla-Viertel“ bezeichnet. Entwicklung des Fener-Viertels: Das Fener-Viertel war aufgrund seiner Lage schon immer eine wichtige Siedlung. Es behielt seine Bedeutung während des Abzugs der Franzosen aus der Region und der Verstaatlichung der Kohleförderung mit der Ausrufung der Republik. Ab den 1940er Jahren wurde das Viertel um Wohnungen für Beamte und Arbeiter erweitert. Mit der Zeit wurden neben den Wohnhäusern auch Schulen, Basare, Sozial- und Sporteinrichtungen gebaut, und das Fener-Viertel erhielt seine heutige lebendige Struktur. Heute verfügt das Fener-Viertel über zahlreiche Einrichtungen wie die Villa des Gouverneurs, verschiedene soziale Einrichtungen, Geschäfte, Sportplätze, Wanderwege und Spielplätze. Auf einer Fläche von 278.000 Quadratmetern wird das Viertel nach wie vor als Wohngebiet genutzt. Merkmale des Leuchtturms: Der Leuchtturm von Zonguldak ist ein 9 Meter hoher, einstöckiger, gemauerter Bau. Sein Dach hat die Form eines Walmdachs und ist mit Marseiller Ziegeln gedeckt. Die Eingangstür des Leuchtturms, der eine T-förmige Struktur aufweist, befindet sich an der vorderen Fassade. Seit 1985 wird er mit Strom betrieben. Sein 500-Watt-Licht ist aus einer Entfernung von 20 Seemeilen zu sehen. Seine Bedeutung heute: Der Leuchtturm von Zonguldak dient als wichtige Orientierungshilfe für die Schifffahrt und ist zu einem der Symbole des Fener-Gebiets geworden. Das Fener-Viertel ist eine wichtige Region von Zonguldak, die mit ihren Naturschönheiten, ihrer historischen Vergangenheit und ihren kulturellen Besonderheiten geschützt werden muss und als städtisches Schutzgebiet registriert wurde. Zusammenfassend lässt sich sagen, dass der Leuchtturm von Zonguldak nicht nur ein Leuchtturm ist, sondern auch ein wichtiges historisches Bauwerk, das die Identität des Fener-Viertels prägt, das sich um ihn herum entwickelt hat. Dieses Viertel, das durch die Auswirkungen des Kohlebergbaus in der Region geprägt wurde, erhielt mit dem Bau des Leuchtturms seinen heutigen Namen und wurde im Laufe der Zeit zu einem der wichtigsten Wohngebiete von Zonguldak.`
+                    }
+                },
+                ar: {
+                    translation: {
+                        title: "حول الكهف",
+                        content: `
+يُعدّ كهف غوكجول عاشر أطول كهف في تركيا وثاني أطول كهف في مقاطعتنا، وهو ثاني أطول كهف في زونغولداك. يقع الكهف، الذي يبلغ طوله الإجمالي 3350 متراً، على طريق زونغولداك - أنقرة السريع ويبعد 3 كم عن وسط المدينة. وبما أن مدخل الكهف يقع بجوار الطريق السريع مباشرة، فمن السهل جداً الوصول إليه. أُجريت أولى الأبحاث في كهف غوكجول في عام 1976 على يد الجيولوجي تيموجين أيجين وباحثا الكهوف البريطانيان كريس باور وهارفي لوماس. في العملية التالية، تم إعداد خريطة للكهف ونتيجة للدراسات تم افتتاحه للسياحة في عام 2001. يتميز كهف غوكجول، الذي استضاف ما يقرب من 300.000 زائر منذ يوم افتتاحه للسياحة، بميزة المناخ المحلي نظراً لأن درجة الحرارة والرطوبة لا تتغير كثيراً خلال العام. ولهذا السبب، يُستخدم الكهف بشكل خاص في علاج مرضى الجهاز التنفسي (الربو).
+ولكونه كهفاً نشطاً، فإن غوكجول كهف متطور أفقياً يتكون من مستويات مترابطة. وهو يتألف من فرعين جانبيين كبيرين بجانب الرواق الرئيسي وقاعة الاكتئاب الكبيرة هي المكان الذي تلتقي فيه الفروع الجانبية. إن الجزء الداخلي لكهف غوكغول غني للغاية من حيث تراكم الحجارة المتساقطة. وتتميز أقسام الكهف من المدخل إلى قاعة الانهيار الكبير بأسماء مثل مدخل الأحافير وقاعة الأستحالة وقاعة العجائب وقاعة المعجزات.
+كما يمكن أن نفهم من أسماء القاعات، هناك جميع أنواع التكوينات في الكهف. وتستحق المشاهدة الهوابط والصواعد والأعمدة التي تتكون من مزيج من الهوابط والصواعد، بالإضافة إلى أحجار العلم المتساقطة وهوابط المعكرونة الكثيفة على المجرى المائي.
+يحتوي الكهف على ممر بطول 875 متراً ومجرى مائي تحت الأرض يتدفق في الكهف، ويزداد معدل تدفقه خلال موسم الأمطار. يتدفق المجرى الجوفي إلى مجرى إرتشيك بواسطة سيفون طبيعي بالقرب من المدخل. يكون هواء الكهف أكثر برودة في الصيف وأكثر دفئاً قليلاً في الشتاء. ونظراً لميزة المناخ المحلي، فإن الكهف له أهمية كبيرة أيضاً من حيث السياحة الصحية. مع اكتمال الترميم في عام 2016 تم تحرير الكهف الذي يحتوي على تشكيلات منفصلة في كل متر من الإضاءة العامة التي تضر بالتشكيلات بانبعاث الحرارة منها، وبدلاً من ذلك تم عمل إضاءة الأجسام بإضاءة LED التي لا تنبعث منها حرارة وتم الكشف عن الجمال البصري للتشكيلات. كهفنا يستحق المشاهدة بإضاءات التكوينات ومسار المشي والجسور الزجاجية ومدرجات المراقبة.`
+                    }
+                }
+            }
+        }, function(err, t) {
+            updateContent();
+            updateAudioSource(i18next.language); // Sayfa yüklendiğinde varsayılan dilin sesini yükle
+        });
+
+
+    languageSelector.addEventListener('change', function () {
+        const selectedLanguage = languageSelector.value;
+        i18next.changeLanguage(selectedLanguage, function() {
+            updateContent();
+            updateAudioSource(selectedLanguage); // Dil değiştiğinde ses kaynağını güncelle
+        });
+    });
+
+    function updateContent() {
+        titleElement.textContent = i18next.t('title');
+        contentElement.textContent = i18next.t('content');
     }
 
-    languageSelector.addEventListener('change', function() {
-        const language = languageSelector.value;
-        loadContent(language);
-    });
+    function updateAudioSource(lang) {
+        if (audioFiles[lang]) {
+            audio.src = audioFiles[lang];
+            // İsteğe bağlı: Yeni ses kaynağı yüklendiğinde otomatik olarak çalmaya başla
+            // audio.play();
+            isPlaying = false;
+            playButton.style.display = 'inline';
+            pauseButton.style.display = 'none';
+            progressBar.style.width = '0%';
+        }
+    }
 
-    playButton.addEventListener('click', function() {
-        audio.play();
-        playButton.style.display = 'none';
-        pauseButton.style.display = 'inline-block';
-    });
-
-    pauseButton.addEventListener('click', function() {
-        audio.pause();
-        pauseButton.style.display = 'none';
-        playButton.style.display = 'inline-block';
-    });
-
-    prevButton.addEventListener('click', function() {
-        audio.currentTime -= 5;
-    });
-
-    nextButton.addEventListener('click', function() {
-        audio.currentTime += 5;
-    });
-
-    audio.addEventListener('timeupdate', function() {
-        if (audio.duration) {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            progressBar.style.width = progress + '%';
+    playButton.addEventListener('click', function () {
+        if (!isPlaying) {
+            audio.play();
+            playButton.style.display = 'none';
+            pauseButton.style.display = 'inline';
+            isPlaying = true;
+            updateProgress();
         }
     });
 
-    progressBarContainer.addEventListener('click', function(e) {
-        const containerWidth = this.offsetWidth;
-        const clickPositionX = e.offsetX;
-        const seekTime = (clickPositionX / containerWidth) * audio.duration;
-        audio.currentTime = seekTime;
+    pauseButton.addEventListener('click', function () {
+        if (isPlaying) {
+            audio.pause();
+            playButton.style.display = 'inline';
+            pauseButton.style.display = 'none';
+            isPlaying = false;
+        }
     });
 
-    speedControl.addEventListener('change', function() {
+    function updateProgress() {
+        if (isPlaying) {
+            audioInterval = setInterval(function () {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = progress + '%';
+
+                // Metin senkronizasyonu (isteğe bağlı, sizin ihtiyacınıza göre düzenleyin)
+                // if (audio.currentTime >= 0 && audio.currentTime < 10) {
+                //     contentElement.textContent = i18next.t('content');
+                // }
+                // if (audio.currentTime >= 10 && audio.currentTime < 20) {
+                //     contentElement.textContent = "Some new part of content"; // Sonraki metin bölümü
+                // }
+                // ... daha fazla koşul
+            }, 100);
+        } else {
+            clearInterval(audioInterval);
+        }
+    }
+
+    // Hızlı oynatma kontrolü
+    speedControl.addEventListener('change', function () {
         audio.playbackRate = parseFloat(speedControl.value);
     });
 
-    loadContent(currentLanguage);
+    // İleri ve geri butonları (şu anda işlevsel değil, ses dosyaları arasında geçiş mantığı eklemeniz gerekir)
+    document.getElementById('nextButton').addEventListener('click', function() {
+        // Sonraki ses dosyasına geçiş mantığı (gerekirse ekleyin)
+        console.log("Sonraki ses dosyası");
+    });
+
+    document.getElementById('prevButton').addEventListener('click', function() {
+        // Önceki ses dosyasına geçiş mantığı (gerekirse ekleyin)
+        console.log("Önceki ses dosyası");
+    });
 </script>
 
 </body>
