@@ -114,9 +114,10 @@
       line-height: 1.6;
     }
 
+    /* Harita için CSS */
     #map {
-      height: 500px;
-      width: 80%;
+      height: 500px; /* Harita yüksekliğini buradan belirledik */
+      width: 100%;  /* Harita genişliğini %100 yaparak sayfa genişliğini takip ettik */
       border-radius: 10px;
       margin-bottom: 30px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -130,6 +131,13 @@
       border-radius: 10px;
       width: 80%;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .popup-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: #0288d1;
+      text-decoration: underline;
     }
   </style>
 
@@ -178,47 +186,52 @@
 </footer>
 
 <script>
-  // Harita oluştur
-  var map = L.map('map').setView([41.4568, 31.8384], 16); // Gökgöl Mağarası koordinatları
+  var map = L.map('map').setView([41.4568, 31.8384], 16);
 
-  // Harita katmanı ekle
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap Katkıcıları'
   }).addTo(map);
 
-  // Özel ikonlar
   var caveTourIcon = L.icon({
-    iconUrl: 'cave-icon.png', // mağara turu ikonu
+    iconUrl: 'cave-icon.png',
     iconSize: [40, 40]
   });
 
   var hikingIcon = L.icon({
-    iconUrl: 'hiking-icon.png', // doğa yürüyüşü ikonu
+    iconUrl: 'hiking-icon.png',
     iconSize: [40, 40]
   });
 
   var cameraIcon = L.icon({
-    iconUrl: 'camera-icon.png', // fotoğrafçılık ikonu
+    iconUrl: 'camera-icon.png',
     iconSize: [40, 40]
   });
 
   var picnicIcon = L.icon({
-    iconUrl: 'picnic-icon.png', // piknik ikonu
+    iconUrl: 'picnic-icon.png',
     iconSize: [40, 40]
   });
 
-  // İşaretçiler ekle
   L.marker([41.4568, 31.8384], {icon: caveTourIcon}).addTo(map)
-    .bindPopup("<b>Mağara Turu Başlangıç Noktası</b>");
+    .bindTooltip("Mağara Turu", {permanent: true, direction: "right"})
+    .bindPopup(`<b>Mağara Turu</b><br>Adres: Gökgöl Mağarası, Zonguldak<br>Tanım: Rehber eşliğinde mağara keşfi.<br>
+      <a class="popup-link" href="https://www.google.com/maps/dir/?api=1&destination=41.4568,31.8384" target="_blank">📍 Yol tarifi al</a>`);
 
   L.marker([41.4572, 31.8390], {icon: hikingIcon}).addTo(map)
-    .bindPopup("<b>Doğa Yürüyüşü Alanı</b>");
+    .bindTooltip("Doğa Yürüyüşü", {permanent: true, direction: "right"})
+    .bindPopup(`<b>Doğa Yürüyüşü</b><br>Adres: Yeşil Vadi Patika Yolu, Zonguldak<br>Tanım: Doğal yürüyüş güzergahı.<br>
+      <a class="popup-link" href="https://www.google.com/maps/dir/?api=1&destination=41.4572,31.8390" target="_blank">📍 Yol tarifi al</a>`);
 
   L.marker([41.4565, 31.8375], {icon: cameraIcon}).addTo(map)
-    .bindPopup("<b>Fotoğraf Noktası</b>");
+    .bindTooltip("Fotoğraf Noktası", {permanent: true, direction: "right"})
+    .bindPopup(`<b>Fotoğraf Noktası</b><br>Adres: Seyir Terası, Gökgöl Mağarası Çıkışı<br>Tanım: Manzara fotoğrafçılığı için ideal.<br>
+      <a class="popup-link" href="https://www.google.com/maps/dir/?api=1&destination=41.4565,31.8375" target="_blank">📍 Yol tarifi al</a>`);
 
   L.marker([41.4560, 31.8380], {icon: picnicIcon}).addTo(map)
-    .bindPopup("<b>Piknik Alanı</b>");
+    .bindTooltip("Piknik Alanı", {permanent: true, direction: "right"})
+    .bindPopup(`<b>Piknik Alanı</b><br>Adres: Gökgöl Piknik Alanı, Mağara Yanı<br>Tanım: Ağaçlar altında dinlenme alanı.<br>
+      <a class="popup-link" href="https://www.google.com/maps/dir/?api=1&destination=41.4560,31.8380" target="_blank">📍 Yol tarifi al</a>`);
+
 </script>
 
 </body>
